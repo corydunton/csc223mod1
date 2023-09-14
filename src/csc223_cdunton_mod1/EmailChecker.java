@@ -1,4 +1,4 @@
-package edu.vwcc.email;
+package csc223_cdunton_mod1;
 
 import java.util.ArrayList;
 import java.util.HashSet;

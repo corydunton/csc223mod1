@@ -1,4 +1,4 @@
-package edu.vwcc.rpg;
+package csc223_cdunton_mod1;
 
 /**
  * Instructions You are designing a role-playing game (RPG) named "Wizards and
@@ -7,24 +7,25 @@ package edu.vwcc.rpg;
  * There are different rules for Warriors and Wizards to determine how much
  * damage points they deal.
  *
- * For a Warrior, these are the rules: - Deal 6 points of damage if the fighter
- * they are attacking is not vulnerable - Deal 10 points of damage if the
- * fighter they are attacking is vulnerable
+ * For a Warrior, these are the rules:
+ * - Deal 6 points of damage if the fighter they are attacking is not vulnerable
+ * - Deal 10 points of damage if the fighter they are attacking is vulnerable
  *
- * For a Wizard, these are the rules: - Deal 12 points of damage if the Wizard
- * prepared a spell in advance - Deal 3 points of damage if the Wizard did not
- * prepare a spell in advance
+ * For a Wizard, these are the rules:
+ * - Deal 12 points of damage if the Wizard prepared a spell in advance
+ * - Deal 3 points of damage if the Wizard did not prepare a spell in advance
  *
  * In general, fighters are never vulnerable. However, Wizards are vulnerable if
  * they haven't prepared a spell.
  *
- * You have seven tasks to complete: 1. Override each Player type's toString()
- * in the format "Player is a ____" (Warrior or Wizard) 2. Make all Players not
- * vulnerable by default 3. Allow Wizards to prepare a spell 4. Make Wizards
- * vulnerable when not having prepared a spell 5. Calculate the damage points a
- * Wizard produces 6. Calculate the damage points a Warrior produces 7. Add
- * helpful documentation in multi-line or Javadoc comments (cf. Hamming
- * exercise)
+ * You have seven tasks to complete:
+ * 1. Override each Player type's toString() in the format "Player is a ____" (Warrior or Wizard)
+ * 2. Make all Players not vulnerable by default
+ * 3. Allow Wizards to prepare a spell
+ * 4. Make Wizards vulnerable when not having prepared a spell
+ * 5. Calculate the damage points a Wizard produces
+ * 6. Calculate the damage points a Warrior produces
+ * 7. Add helpful documentation in multi-line or Javadoc comments (cf. Hamming exercise)
  */
 
 /**
@@ -59,14 +60,14 @@ class Warrior extends RPGPlayer {
 
 	@Override
 	public String toString() {
-		return "Player is a " + Warrior.class.getName();
+		return "Player is a Warrior";
 	}
 
 	@Override
 	int damagePoints(RPGPlayer wizard) {
-		int dmg = 12;
+		int dmg = 6;
 		if (wizard.isVulnerable()) {
-			dmg = 3;
+			dmg = 10;
 		}
 		return dmg;
 	}
@@ -80,7 +81,7 @@ class Wizard extends RPGPlayer {
 
 	@Override
 	public String toString() {
-		return "Player is a " + Wizard.class.getName();
+		return "Player is a Wizard";
 	}
 
 	@Override
@@ -90,9 +91,9 @@ class Wizard extends RPGPlayer {
 
 	@Override
 	int damagePoints(RPGPlayer warrior) {
-		int dmg = 6;
+		int dmg = 12;
 		if (this.isVulnerable()) {
-			dmg = 10;
+			dmg = 3;
 		}
 		return dmg;
 	}

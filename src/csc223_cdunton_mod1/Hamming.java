@@ -1,4 +1,4 @@
-package edu.vwcc.hamming;
+package csc223_cdunton_mod1;
 
 import java.io.ByteArrayOutputStream; // ignore but don't delete
 import java.io.PrintStream; // ignore but don't delete

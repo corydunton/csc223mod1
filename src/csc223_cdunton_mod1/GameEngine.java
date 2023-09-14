@@ -1,4 +1,4 @@
-package edu.vwcc.rpg;
+package csc223_cdunton_mod1;
 
 public class GameEngine {
 
